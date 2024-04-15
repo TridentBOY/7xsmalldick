@@ -496,7 +496,7 @@ if not isfile("Patrick.pub") then
 
                 LPH_NO_VIRTUALIZE(function()
                 function library:Tween(...) TweenService:Create(...):Play() end
-                    function library:addTab(name,image)
+                    function library:addTab(name)
                         local newTab = tabholder.tab:Clone()
                         local newButton = tabviewer.button:Clone()
 
@@ -508,12 +508,7 @@ if not isfile("Patrick.pub") then
                         newButton.Parent = tabviewer
                         newButton.Modal = true
                         newButton.Visible = true
-                        newButton.Image = image
                         newButton.text.Text = name
-
-                        for i, v in next, library.tabbuttons do
-                        v.ImageColor3 = Color3.fromRGB(25, 25, 25)
-                        end
 
                         newButton.MouseButton1Click:Connect(function()
                         for i,v in next, library.tabs do v.Visible = v == newTab end
@@ -521,15 +516,11 @@ if not isfile("Patrick.pub") then
                         for i,v in next, library.tabbuttons do
                         local state = v == newButton
                         local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
-                        local imageTweenStart = TweenService:Create(v, tweenInfo, {ImageColor3 = Color3.fromRGB(105, 100, 210)})
                         local textTweenStart = TweenService:Create(v.text, tweenInfo, {TextColor3 = Color3.fromRGB(105, 100, 210)})
-                        local imageTweenEnd = TweenService:Create(v, tweenInfo, {ImageColor3 = Color3.fromRGB(25,25,25)})
                         local textTweenEnd = TweenService:Create(v.text, tweenInfo, {TextColor3 = Color3.fromRGB(125, 125, 125)})
                         if state then
-                            imageTweenStart:Play()
                             textTweenStart:Play()
                         else
-                            imageTweenEnd:Play()
                             textTweenEnd:Play()
                         end
                         end
