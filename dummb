@@ -356,19 +356,6 @@ if not isfile("Patrick.pub") then
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "Patrick.pub_gui"
 
-    local menu_text_label = Instance.new("TextLabel", menu.bg)
-    menu_text_label.Name = "pre"
-    menu_text_label.RichText = true
-    menu_text_label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    menu_text_label.BackgroundTransparency = 1.000
-    menu_text_label.Position = UDim2.new(0, 4, 0, -43)
-    menu_text_label.Size = UDim2.new(0, 802, 0, 24)
-    menu_text_label.FontFace = Fonts.ProggyTiny
-    menu_text_label.Text = library.Title
-    menu_text_label.TextColor3 = Color3.fromRGB(74, 74, 74)
-    menu_text_label.TextSize = 9
-    menu_text_label.TextStrokeTransparency = 0.000
-
  
     for _, obj in pairs(menu:GetDescendants()) do
         if obj.Name:lower():find('name_esp') then
