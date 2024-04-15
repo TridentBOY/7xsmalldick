@@ -297,7 +297,6 @@ if not isfile("Patrick.pub") then
  end
  
  local library = {
-    Title = 'Patrick.pub.<font color="rgb(105, 100, 210)">Pub</font> || universal',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
